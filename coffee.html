@@ -43,41 +43,45 @@
         <h4>Total: <span id="revenue"><!-- Revenue Message will show up here --></span></h4>
     </div>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"> </script>
 <script>
 
     // Set these variables to their DOM elements
 
-    let coffeeImage = document.querySelector("#coffee-image");
-    let oldImage = coffeeImage.getAttribute('src');
+    // let coffeeImage = document.querySelector("#coffee-image");
+    $('#coffee-image');
+    //let oldImage = coffeeImage.getAttribute('src');
     // debugger;
-    coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+    // coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+    $('img#coffee-image').attr("src", 'static/coffee_beans.jpg');
+    // coffeeImage.addEventListener('click', makeCoffee);
+    $('#coffeeImage').on('click', makeCoffee);
 
-    coffeeImage.addEventListener('click', makeCoffee);
     let revenueMessage;
 
 
-    function makeCoffee() { //secondFunction ~ 1500 ms delay
-
+    function makeCoffee(evt) { //secondFunction ~ 1500 ms delay
+        // FIXME: update to #coffee-image& JQuery to make this work
         let coffeeMug = function() {
             coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
 
-        }
+        };
 
         let coffeeMachine = function() {
             coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
             setTimeout(coffeeBeans, 2500);
             //setTimeout(c, 2500)
-        }
+        };
 
         let coffeeBeans = function() {
             coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
-        }
+        };
 
         coffeeMachine(); // first function that's shown
         setTimeout(coffeeMug, 1500); // second function that's shown; 1500 ms delay, shown for 2500 ms
         // setTimeout(coffeeBeans, 4000); //third function that's shown; 4000 ms delay (total); no limit
 
+    }
     // use this JavaScript object in further study step
 
     const prices = {
