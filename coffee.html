@@ -66,6 +66,7 @@
 
         let coffeeMachine = function() {
             coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+            setTimeout(coffeeBeans, 2500);
             //setTimeout(c, 2500)
         }
 
@@ -73,21 +74,9 @@
             coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
         }
 
-        setTimeout(coffeeMug, 1500) // second function that's shown; 1500 ms delay, shown for 2500 ,s
-        setTimeout(coffeeMachine) // first function that's shown no delay; for 1500 ms  //
-        setTimeout(coffeeBeans, 4000) //third function that's shown; 4000 ms delay (total); no limit
-
-    }
-
-    // function coffeeMachine() { //firstFunction ~ no delay
-    //     coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
-    // }
-
-    // function coffeeBeans() {//thirdFunction ~2500 ms delay (total 4000 ms)
-
-
-
-
+        coffeeMachine(); // first function that's shown
+        setTimeout(coffeeMug, 1500); // second function that's shown; 1500 ms delay, shown for 2500 ms
+        // setTimeout(coffeeBeans, 4000); //third function that's shown; 4000 ms delay (total); no limit
 
     // use this JavaScript object in further study step
 
